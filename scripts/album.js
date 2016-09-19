@@ -27,6 +27,20 @@ var albumMarconi = {
     ]
 };
 
+var albumNyusha = {
+    title: 'Chuda',
+    artist: 'Nyusha',
+    label: 'WB',
+    year: '2010',
+    albumArtUrl: 'http://cn.best-wallpaper.net/wallpaper/1680x1050/1212/Nyusha-Shurochkina-01_1680x1050.jpg',
+    songs: [
+        { title: 'Hello', duration: '3:34'},
+        { title: 'Why', duration: '2:42'},
+        { title: 'Angel', duration: '3:03'},
+        { title: 'Not discovered', duration: '3:10'}
+    ]
+}
+
 var createSongRow = function(songNumber, songName, songLength) {
     var template = 
         '<tr class="album-view-song-item">'
@@ -40,13 +54,14 @@ var createSongRow = function(songNumber, songName, songLength) {
     
 };
 
-var setCurrentAlbum = function(album) {
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
     
-    var albumTitle = document.getElementsByClassName('album-view-title')[0];
-    var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-    var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-    var albumImage = document.getElementsByClassName('album-cover-art')[0];
-    var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
+var setCurrentAlbum = function(album) {
     
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
@@ -62,5 +77,30 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
+    
+    var albums = [albumPicasso, albumMarconi, albumNyusha];
+    var index = 0;
+    albumImage.addEventListener("click", function(event) {
+        setCurrentAlbum(albums[index]);
+        index++;
+        if (index == albums.length) {
+            index = 0;
+        }
+    });
+    
+   /* My attempt at writing this code did not work.
+    var albums = [albumPicasso, albumMaconi, albumNyusha];
+    var index = 1;
+
+    albumImage.addEventListener("click", function nextElement() {
+        if (index < albums.length) {
+            setCurrentAlbum(albums[index]);
+            index++;
+    }
+        else {
+            index = 0;   
+    }
+};*/
+    
 };
 
