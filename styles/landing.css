@@ -28,9 +28,10 @@ body.landing {
 }
 
 .selling-points {
-    position: relative;
-
-}
+     position: relative;
+     display: table;
+     width: 100%;
+ }
 
 .point {
     position: relative;
