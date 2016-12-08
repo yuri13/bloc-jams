@@ -4,9 +4,3 @@
 
 <h2>Main Page<h2>
 ![gif](http://i.giphy.com/3oriNUYsPKiGKcjcsw.gif)
-
-<h2>Album Page</h2>
-![gif](http://i.giphy.com/3oriO3FdmahhArNYI0.gif)
-
-<h2>Main Page - Mobile View</h2>
-![gif](http://i.giphy.com/3oriO9gsIcyj5OHVG8.gif)
